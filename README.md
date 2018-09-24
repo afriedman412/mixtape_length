@@ -1,8 +1,4 @@
----
-layout: post
-title: Mixtape Length in the Digital Era
-summary: How long should your mixtape be?
----
+# Mixtape Length in the Digital Era
 How long should a rap mixtape be? It's a long-standing question, and one whose answer has swung wildly throughout the years. When physical media and radio ruled, it was simple: You were limited by concrete things like the length of blank tapes or your radio slot. Your selections had to fill two 30 or 45 minute sides, or an hour or two of air time, and that was that. But starting in the late 90's, things changed. Whether it was because rap became a more reliable hustle or because the price of recording and distribution dropped, the importance of, uh, non-album content increased exponentially.
 
 Before the rise of digital music, artists who wanted to be heard basically had to either press up expensive vinyl, or physically show up and rap on the air. The ability to burn a session to CD and have it in circulation the next day opened up all kinds of new possibilities. You could do a whole CD of you rapping over whatever was hot every week if you wanted. If you had a buzz, you could do a whole tape with your crew without worrying about spreading your resources too thin. (DJ's, for their part, suddenly had new ways to leverage and monetize their connections.)
@@ -38,20 +34,20 @@ After processing, we have 1415 tracks from 115 projects from 67 individual artis
 
 Album length is approximately normally distributed, with a mean of 14. Normalized play counts are mostly under 0.2, with a small peak at 1.0 (probably representing the first and second tracks). This is what we  expect to see.
 
-![EDA Histograms](../images/mixtape_length_files/hist1.png "EDA hist")
+![EDA Histograms](hist1.png "EDA hist")
 
 Normalized plays decrease for larger track positions, also as expected: the further along on an album a song is, the less plays it gets. 
 
-![track position v. normailzed plays](../images/mixtape_length_files/plot1.png "track position v. normailzed plays")
+![track position v. normailzed plays](plot1.png "track position v. normailzed plays")
 
 Album length and average plays are less strongly correlated. This is important because it indicates listener behavior isn't particularly affected by project length.
 
-![album length v. avg. normailzed plays](../images/mixtape_length_files/plot2.png "album length v. avg. normailzed plays")
+![album length v. avg. normailzed plays](plot2.png "album length v. avg. normailzed plays")
 
 ## Analysis
 With our data, it's fairly straightforward to make a model that predicts normalized play count from track position. (I used [Scikit-Learn](http://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html).)
 
-![average v. predicted 2](../images/mixtape_length_files/results3.png "average v. predicted 2")
+![average v. predicted 2](results3.png "average v. predicted 2")
 
 We could observe that at 17 (0-indexed) tracks the predicted play count drops below 0 and stop right there. Our data indicates every track over 17 is, statistically speaking, doing the whole project a disservice.
 
@@ -59,7 +55,7 @@ However, looking at the actual play counts, it's more of a plateau than a steady
 
 This is evident if we split the data at the 11th track.
 
-![average v. predicted 2](../images/mixtape_length_files/results4.png "average v. predicted 2")
+![average v. predicted 2](results4.png "average v. predicted 2")
 
 This is kind of weird! What does it mean?
 
