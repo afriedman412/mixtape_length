@@ -15,7 +15,7 @@ I'm making no distinction between a "mixtape", and "album", a "project", an "EP"
 I used YouTube data because, frankly, it was the most readily available.
 
 ## Gathering the data
-I created a list of 133 projects from 74 different rappers. Drawing from the aritst's official YouTube pages (or, in a handful of cases, [DatPiff](https://www.youtube.com/channel/UC2SfCLE_jQgPwXQCWqwVIEw)), I then pulled the YouTube playlist ID for every project. With that ID, I used the YouTube API and [apiclient](https://pypi.org/project/apiclient/) to extract play counts for every track.
+[I created a list of 133 projects from 74 different rappers](https://github.com/afriedman412/mixtape_length/blob/master/mixtape_links.csv). Drawing from the aritst's official YouTube pages (or, in a handful of cases, [DatPiff](https://www.youtube.com/channel/UC2SfCLE_jQgPwXQCWqwVIEw)), I then pulled the YouTube playlist ID for every project. With that ID, I used the YouTube API and [apiclient](https://pypi.org/project/apiclient/) to extract play counts for every track.
 
 ## Processing and feature engineering
 
